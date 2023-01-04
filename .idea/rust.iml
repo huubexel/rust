@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/loops/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ownership/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/references_and_borrowing/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/slices/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/guessing_game/target" />
       <excludeFolder url="file://$MODULE_DIR$/variables/target" />
       <excludeFolder url="file://$MODULE_DIR$/data_types/target" />
@@ -19,6 +20,7 @@
       <excludeFolder url="file://$MODULE_DIR$/loops/target" />
       <excludeFolder url="file://$MODULE_DIR$/ownership/target" />
       <excludeFolder url="file://$MODULE_DIR$/references_and_borrowing/target" />
+      <excludeFolder url="file://$MODULE_DIR$/slices/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
