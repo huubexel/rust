@@ -141,7 +141,7 @@ struct ChangeColorMessage(i32, i32, i32); // tuple struct
 // You can also define methods for enums, also with the impl.
 
 impl Message {
-    fn call(&self) -> self {
-        self
+    fn call(&self) -> u8 {
+        5
     }
 }
