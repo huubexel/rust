@@ -16,6 +16,8 @@
       <sourceFolder url="file://$MODULE_DIR$/rectangles/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/enums/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/match_control_flow/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/vectors/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/guessing_game/target" />
       <excludeFolder url="file://$MODULE_DIR$/variables/target" />
       <excludeFolder url="file://$MODULE_DIR$/data_types/target" />
@@ -30,6 +32,8 @@
       <excludeFolder url="file://$MODULE_DIR$/rectangles/target" />
       <excludeFolder url="file://$MODULE_DIR$/enums/target" />
       <excludeFolder url="file://$MODULE_DIR$/match_control_flow/target" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/target" />
+      <excludeFolder url="file://$MODULE_DIR$/vectors/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
