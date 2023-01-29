@@ -20,6 +20,7 @@
       <sourceFolder url="file://$MODULE_DIR$/vectors/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/strings/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/hashmaps/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/error_panic/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/guessing_game/target" />
       <excludeFolder url="file://$MODULE_DIR$/variables/target" />
       <excludeFolder url="file://$MODULE_DIR$/data_types/target" />
@@ -28,16 +29,17 @@
       <excludeFolder url="file://$MODULE_DIR$/loops/target" />
       <excludeFolder url="file://$MODULE_DIR$/ownership/target" />
       <excludeFolder url="file://$MODULE_DIR$/references_and_borrowing/target" />
-      <excludeFolder url="file://$MODULE_DIR$/modules/target" />
+      <excludeFolder url="file://$MODULE_DIR$/slices/target" />
       <excludeFolder url="file://$MODULE_DIR$/structs/target" />
-      <excludeFolder url="file://$MODULE_DIR$/strings/target" />
-      <excludeFolder url="file://$MODULE_DIR$/vectors/target" />
+      <excludeFolder url="file://$MODULE_DIR$/example_using_structs/target" />
       <excludeFolder url="file://$MODULE_DIR$/rectangles/target" />
       <excludeFolder url="file://$MODULE_DIR$/enums/target" />
       <excludeFolder url="file://$MODULE_DIR$/match_control_flow/target" />
-      <excludeFolder url="file://$MODULE_DIR$/slices/target" />
-      <excludeFolder url="file://$MODULE_DIR$/example_using_structs/target" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/target" />
+      <excludeFolder url="file://$MODULE_DIR$/vectors/target" />
+      <excludeFolder url="file://$MODULE_DIR$/strings/target" />
       <excludeFolder url="file://$MODULE_DIR$/hashmaps/target" />
+      <excludeFolder url="file://$MODULE_DIR$/error_panic/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

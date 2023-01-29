@@ -78,4 +78,7 @@ fn main() {
     // Than you also have some weird indian letters or something like japanese or chinese
     // for that, just use a crate.
 
+    // If you would use .bytes() instead of .chars you would get the integers where the
+    // letters are made up of.
+
 }
