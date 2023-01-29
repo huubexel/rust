@@ -21,6 +21,7 @@
       <sourceFolder url="file://$MODULE_DIR$/strings/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/hashmaps/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/error_panic/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/recoverable_errors/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/guessing_game/target" />
       <excludeFolder url="file://$MODULE_DIR$/variables/target" />
       <excludeFolder url="file://$MODULE_DIR$/data_types/target" />
@@ -40,6 +41,7 @@
       <excludeFolder url="file://$MODULE_DIR$/strings/target" />
       <excludeFolder url="file://$MODULE_DIR$/hashmaps/target" />
       <excludeFolder url="file://$MODULE_DIR$/error_panic/target" />
+      <excludeFolder url="file://$MODULE_DIR$/recoverable_errors/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
