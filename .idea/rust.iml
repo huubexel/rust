@@ -3,48 +3,48 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/branches/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/data_types/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/enums/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/error_panic/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/functions/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/generics/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/guessing_game/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/hashmaps/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/loops/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/match_control_flow/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/modules/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/ownership/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/recoverable_errors/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/rectangles/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/references_and_borrowing/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/slices/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/strings/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/structs/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/traits/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/variables/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/learned_topics/vectors/src" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/guessing_game/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/variables/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/data_types/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/functions/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/branches/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/loops/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/ownership/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/references_and_borrowing/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/slices/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/structs/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/rectangles/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/enums/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/match_control_flow/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/modules/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/vectors/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/strings/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/hashmaps/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/error_panic/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/recoverable_errors/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/generics/target" />
-      <excludeFolder url="file://$MODULE_DIR$/learned_topics/traits/target" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/multiple_directory_topics/traits/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/multiple_directory_topics/modules/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/branches/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/data_types/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/enums/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/error_panic/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/functions/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/generics/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/guessing_game/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/hashmaps/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/loops/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/match_control_flow/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/ownership/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/recoverable_errors/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/rectangles/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/references_and_borrowing/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/slices/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/strings/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/structs/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/variables/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/vectors/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/guessing_game/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/variables/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/data_types/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/functions/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/branches/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/loops/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/ownership/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/references_and_borrowing/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/slices/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/structs/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/rectangles/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/enums/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/match_control_flow/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/vectors/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/strings/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/hashmaps/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/error_panic/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/recoverable_errors/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/generics/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/multiple_directory_topics/traits/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/multiple_directory_topics/modules/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
