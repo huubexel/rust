@@ -14,7 +14,7 @@ fn main() {
     //     Err(E),
     //}
     // There are a lot of functions that implement this, so let's use one.
-    let greeting_file_result = File::open("hello.txt");
+    let greeting_file_result = File::open("../hello.txt");
     // As the IDE already suggests, the return type is a Result<File>
     // If the file exists this will return a File, std::fs:File
     // when it does not, it will return std::io:Error
@@ -32,7 +32,7 @@ fn main() {
     let _greeting_file = match greeting_file_result {
         Ok(file) => file,
         Err(error) => match error.kind() {
-            ErrorKind::NotFound => match File::create("hello.txt") {
+            ErrorKind::NotFound => match File::create("../hello.txt") {
                 Ok(fc) => fc,
                 Err(e) => panic!("Problem creating the file: {:?}", e),
             },
@@ -47,9 +47,9 @@ fn main() {
     // This matches on if the file isn't found.
 
     // If for some reason you don't want the match expression this is an alternative.
-    let _greeting_file = File::open("hello.txt").unwrap_or_else(|error| {
+    let _greeting_file = File::open("../hello.txt").unwrap_or_else(|error| {
         if error.kind() == ErrorKind::NotFound {
-            File::create("hello.txt").unwrap_or_else(|error| {
+            File::create("../hello.txt").unwrap_or_else(|error| {
                 panic!("Problem creating the file: {:?}", error);
             })
         } else {
@@ -61,10 +61,10 @@ fn main() {
     // There are some shortcuts for panic, unwrap and expect.
     // Unwrap: if the Result is Ok, unwrap will return the value inside the Ok.
     // If the Result is Err, unwrap will call the panic macro, this is how to use it:
-    let _greeting_file3 = File::open("hello.txt").unwrap();
+    let _greeting_file3 = File::open("../hello.txt").unwrap();
     // Expect: does exactly the same thing as unwrap, but you have to give a message as parameter.
     // For this reason, just use expect.
-    let _greeting_file4 = File::open("hello.txt").expect("This file does not exist yet");
+    let _greeting_file4 = File::open("../hello.txt").expect("This file does not exist yet");
 
 
     // Propagating errors:
@@ -146,7 +146,7 @@ fn main() {
 }
 
 fn _read_username_from_file() -> Result<String, io::Error> {
-    let username_file_result = File::open("hello.txt");
+    let username_file_result = File::open("../hello.txt");
 
     let mut username_file = match username_file_result {
         Ok(file) => file,
@@ -162,7 +162,7 @@ fn _read_username_from_file() -> Result<String, io::Error> {
 }
 
 fn _read_username_from_file2() -> Result<String, io::Error> {
-    let mut username_file = File::open("hello.txt")?;
+    let mut username_file = File::open("../hello.txt")?;
     let mut username = String::new();
     username_file.read_to_string(&mut username)?;
     Ok(username)
@@ -170,12 +170,12 @@ fn _read_username_from_file2() -> Result<String, io::Error> {
 
 fn _read_username_from_file3() -> Result<String, io::Error> {
     let mut username = String::new();
-    File::open("hello.txt")?.read_to_string(&mut username)?;
+    File::open("../hello.txt")?.read_to_string(&mut username)?;
     Ok(username)
 }
 
 fn _read_username_from_file4() -> Result<String, io::Error> {
-    fs::read_to_string("hello.txt")
+    fs::read_to_string("../hello.txt")
 }
 
 fn _last_char_of_first_line(text: &str) -> Option<char> {
