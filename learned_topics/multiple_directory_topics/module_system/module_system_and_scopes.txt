@@ -1,0 +1,52 @@
+Index (every time I say the thing on the left, I actually mean the thing on the right):
+your code --> the library code you made.
+
+You have to consider how you encapsulate the implementation details of your code.
+Once a piece of code in another project uses your code, and it relies on certain aspect of your code,
+it is quite difficult to change something in your code that also changes the outcome of your code.
+If you really want this covered, you could make it so that you use different versions of your code,
+but that would still benefit from it if you thought about the details of the code.
+Thinking it out and putting it in a scheme or somewhere which says how you want it to work also helps
+with keeping the amount of details in your head small.
+
+You also have to keep in mind the usage of scopes and how they work.
+Keep in mind that you can’t have two items with the same name in the same scope.
+Rust does have tools to solve these problems, but try to come up with original names for the things you use.
+Rust has a number of features to manage your code's organization. f.e.:
+Which details are exposed, which details are private and what names are in scope in the programs.
+
+These features are referred to as the module system, these include:
+- Packages: A Cargo feature that lets you build, test, and share crates.
+- Crates: A tree of modules that produces a library or executable.
+- Modules and use: Let you control the organization, scope, and privacy of paths.
+- Paths: A way of naming an item, such as a struct, function, or module.
+
+Crate:
+The smallest amount the Rust compiler considers at the time is a crate.
+A crate can contain multiple things, but it can be as small as one main or lib file.
+Crates can contain modules, these modules may also be defined in other files that get compiled with the crate.
+
+You have 2 forms of crate: binary crate or library crate.
+- Binary crates are programs, you can compile to an executable. These must have a main.
+- Library crates don't have a main and don't compile to an executable. These provide functionality intended to be
+shared over multiple projects. rand (random number generation) is an example of this. When Rustaceans say crate,
+they usually refer to the library crate, for which they will also use 'library' sometimes.
+
+The crate root is the source file the Rust compiler starts from and makes up the root module of the crate.
+
+Package:
+A bundle of one or more crates that provide a set of functionality.
+Contains a Cargo.toml file that describes how to build those crates.
+A package can contain as many binary crates as you like but at most 1 library crate.
+A package must at least contain 1 crate, whether that's a library or binary one.
+
+--------
+
+When you run cargo new my-project
+And you do ls in the project directory you get a Cargo.toml file --> this gives you a package,
+and you get a directory src with main.rs (for a binary crate) or lib.rs (for a library crate) in it.
+This main.rs or lib.rs is the crate root file.
+Cargo passes the crate root files to rustc to build the library or binary with.
+
+A package can have multiple binary crates by placing files in the src/bin directory -->
+each file will be a separate binary crate.
