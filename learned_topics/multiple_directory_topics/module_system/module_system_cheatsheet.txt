@@ -1,30 +1,41 @@
-- Start from the crate root: When compiling a crate, the compiler first looks in the crate root file
-  (usually src/lib.rs for a library crate or src/main.rs for a binary crate) for code to compile.
-- Declaring modules: In the crate root file, you can declare new modules;
-  say, you declare a “garden” module with mod garden;.
-  The compiler will look for the module’s code in these places:
-    - Inline, within curly brackets that replace the semicolon following mod garden
-    - In the file src/garden.rs
-    - In the file src/garden/mod.rs
-- Declaring submodules: In any file other than the crate root, you can declare submodules.
-  For example, you might declare mod vegetables; in src/garden.rs.
-  The compiler will look for the submodule’s code within the directory named for the parent module in these places:
-    - Inline, directly following mod vegetables, within curly brackets instead of the semicolon
-    - In the file src/garden/vegetables.rs
-    - In the file src/garden/vegetables/mod.rs
-- Paths to code in modules: Once a module is part of your crate, you can refer to code in that module from
-  anywhere else in that same crate, as long as the privacy rules allow, using the path to the code.
-  For example, an Asparagus type in the garden vegetables module would be found at crate::garden::vegetables::Asparagus.
-- Private vs public: Code within a module is private from its parent modules by default.
-  To make a module public, declare it with pub mod instead of mod.
-  To make items within a public module public as well, use pub before their declarations.
-- The use keyword: Within a scope, the use keyword creates shortcuts to items to reduce repetition of long paths.
-  In any scope that can refer to crate::garden::vegetables::Asparagus,
-  you can create a shortcut with use crate::garden::vegetables::Asparagus;
-  and from then on you only need to write Asparagus to make use of that type in the scope.
+Module cheatsheet:
+- compiler --> starts at the main.rs or lib.rs --> this is the crate root file, also known as root file.
+- Modules:
+  In the root file you can declare modules. As an example I created 'garden' in the main.rs of this directory /src.
+  I did this with mod garden;
+  The compiler will look for 3 places to find the mod garden -->
+  1. Inline in the same file, mod garden { some code here }
+  2. In the file src/garden.rs
+  3. In the file src/garden/mod.rs
+  If the compiler cannot find it in any of these 3 places, it will throw an error.
+- Submodules:
+  In any other file except for the root file you can declare submodules.
+  Say that you want to declare the submodule vegetables which is a submodule of garden.
+  Say you declare mod vegetables in src/garden.rs, again the compiler will like in these 3 places:
+  1. Inline in the same file, mod vegetables { some code here }, this cannot be in the main file.
+  2. In the file src/garden/vegetables.rs
+  3. In the file src/garden/vegetables/mod.rs
+  Again, If the compiler cannot find it in any of these 3 places, it will throw an error.
+- Private or public:
+  You can make the (sub)module private or public, private is the standard, so you do not have to specify that.
+  If you want to make it public, put pub in front of the mod. You can also make the items in the module public
+  by putting pub in front of them.
+- Use keyword:
+  The use keyword creates shortcuts to reduce repetition.
+  Say you are going to use crate::garden::vegetables::Carrot in a file, you can create shortcut with
+  use crate::garden::vegetables::Carrot, now you only have to type Carrot and can use that everywhere in the scope.
 
+Execution of the things above:
+For this example, I'll make a module called garden, a submodule called vegetables and a struct called Carrot.
+In the book they use version 2 of the compiler searching modules, so I will use that as well.
 
+I make the module by putting a garden.rs in the src file, and I include this in the root file with mod garden;
+Than I make the submodule by making a directory in which the submodule of garden can go: garden
+In the garden directory, I make the submodule file vegetables.rs, remember this is a submodule of garden, so to
+use this, you go to garden.rs and put mod vegetables; in it.
+Now I made a struct named Carrot in the vegetables.rs
 
-
-What happens:
-compiler --> starts at the main.rs or lib.rs
+To use Carrot in the main.rs: use crate::garden::vegetables::Carrot;
+Now I get an error that vegetables is private, which it is, so I make it public --> pub mod vegetables in garden.rs
+I give the vegetables.rs debug mode, so I will be able to print Carrot.
+I make an instance of Carrot in the main.rs main and print it, to show that it works.

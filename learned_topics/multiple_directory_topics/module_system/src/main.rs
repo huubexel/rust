@@ -1,3 +1,8 @@
+mod garden;
+
+use crate::garden::vegetables::Carrot;
+
 fn main() {
-    println!("Hello, world!");
+    let plant = Carrot {};
+    println!("I'm growing {:?}!", plant);
 }
