@@ -1,0 +1,45 @@
+All of the code referred to in this file is in vegetables.rs
+
+There are two path sorts at which you can refer:
+- Absolute path: full-length path starting from the crate root. If the crate is external, start with the name of
+  the crate when you refer to it. If it is from this crate, than use 'crate' at the start of the path.
+- relative path: starts from the current module and uses self, super or an identifier in the current module.
+
+For both the absolute and relative path you use the :: between the last path identifier and the following one that
+you are referring with.
+
+Here are some examples when you are in vegetables.rs (see vegetables.rs in /src/garden/vegetables.rs):
+crate::garden::vegetables::paprika::seeds::grow();      for the absolute path
+paprika::seeds::grow();                     for the relative path
+
+As you can see, you have to name each successive module until you reach the function from the module you want to use.
+If you replace the :: with / you basically have the path with the modules. Where calling crate is calling root /
+
+The preference is with absolute paths. Please use absolute paths.
+
+Alright, let's say you now have this code:
+#[derive(Debug)]
+pub struct Carrot {}
+
+mod paprika {
+    mod seeds {
+        fn grow() {}
+    }
+}
+
+pub fn regenerate_food() {
+    /* Absolute path */
+    crate::garden::vegetables::paprika::seeds::grow();
+    /* The absolute might say that the first part is unnecessary,
+       it is way cleaner, you will know exactly where it is. */
+
+    /* Relative path */
+    paprika::seeds::grow();
+}
+
+This will spawn an error that the seeds modules is private and you cannot use it unless it becomes public.
+In Rust all items (functions, methods, structs, enums, modules, and constants),
+are private to parent modules by default. So that means that seeds is private to use only for paprika right now.
+If we make seeds public we are already a step further into making this work.
+But running the code with the adjustment, still gives an error.
+Right now seeds is public to use.
