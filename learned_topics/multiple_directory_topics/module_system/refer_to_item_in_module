@@ -41,5 +41,34 @@ This will spawn an error that the seeds modules is private and you cannot use it
 In Rust all items (functions, methods, structs, enums, modules, and constants),
 are private to parent modules by default. So that means that seeds is private to use only for paprika right now.
 If we make seeds public we are already a step further into making this work.
+pub mod seeds {}
+
 But running the code with the adjustment, still gives an error.
-Right now seeds is public to use.
+Right now, seeds is public to use. But grow is still private for seeds only and we want to use it outside of
+seeds, in regenerate_food.
+The only thing the pub keyword on a module does (like pub mod seeds) is, it lets code in its ancestors modules refer
+to it, this sounds cryptic, but let me explain.
+Modules are basically containers, if you make the contents of the container public, but all those contents are
+private, than there still is no way to get anything out of that module, because the private functions or other
+private contents can only be use by other functions in that module.
+So if you want to a function from the module, you have to make that function public, so now you get this code.
+mod paprika {
+    pub mod seeds {
+        pub fn grow() {}
+    }
+}
+
+pub fn regenerate_food() {
+    /* Absolute path */
+    crate::garden::vegetables::paprika::seeds::grow();
+    /* The absolute might say that the first part is unnecessary,
+       it is way cleaner, you will know exactly where it is. */
+
+    /* Relative path */
+    paprika::seeds::grow();
+}
+
+This code will run!
+
+
+See vegetables.rs for the code.
