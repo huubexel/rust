@@ -1,0 +1,1 @@
+You can also make structs and enums public but there are a few details that have to be told first.

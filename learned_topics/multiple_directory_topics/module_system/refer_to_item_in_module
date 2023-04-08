@@ -69,6 +69,48 @@ pub fn regenerate_food() {
 }
 
 This code will run!
-
-
 See vegetables.rs for the code.
+
+Referring to an item with super::
+If something is in the parent module / parent code of the current code you are writing, you cannot make a relative
+because for a relative path you have to start on the same level and go deeper.
+And say you are 15 levels deep, that means that you have to type 15 things deep which makes no sense if it is just
+above your current code.
+For this, Rust uses super::
+With super:: you can get to the parent of your current module or code.
+So say you are in a file and this is the code:
+
+fn deliver_order() {}
+
+mod back_of_house {
+    fn fix_incorrect_order() {
+        cook_order();
+    }
+
+    fn cook_order() {}
+}
+
+Say you want to use deliver_order and this code is 15 levels deep, normally you would need to use an absolute path
+because that is the only way you could get there without moving the code.
+But in this situation it is fairly useful to use super!
+To get deliver_order put super::deliver_order(); in fix_incorrect_order --> see actions.rs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
