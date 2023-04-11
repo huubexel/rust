@@ -1,0 +1,114 @@
+The use keyword works like use in PHP, like import in Java en Python, etc.
+What happens is if you import something like this:
+use crate::garden::vegetables::paprika::seeds;
+You can use seeds without the need to type crate::garden::vegetables::paprika::seeds every type you want to use seeds.
+You can now just use seeds::grow() if you want to use grow() from seeds, etc.
+
+There is one thing you have to take into account when using the keyword use,
+use only works on the same scope as the thing you want to use, so this code works:
+mod front_of_house {
+    pub mod hosting {
+        pub fn add_to_waitlist() {}
+    }
+}
+
+use crate::front_of_house::hosting;
+
+pub fn eat_at_restaurant() {
+    hosting::add_to_waitlist();
+}
+
+And this code does not work, because the function is now in a new child module (different scope):
+mod front_of_house {
+    pub mod hosting {
+        pub fn add_to_waitlist() {}
+    }
+}
+
+use crate::front_of_house::hosting;
+
+mod customer {
+    pub fn eat_at_restaurant() {
+        hosting::add_to_waitlist();
+    }
+}
+
+To fix this you can either move the use in the module or use super::hosting::add_to_waitlist() in this case.
+This is the way to do it, in this case you could also do it like this:
+use crate::front_of_house::hosting::add_to_waitlist, and then just use the add_to_waitlist() in the code.
+However, this is not the way to go because in the case where you have to use hosting::add_to_waitlist(),
+you can clearly see where the function is coming from, with only add_to_waitlist, you cannot,
+it could be locally, but it could also be from another library. So to add the parent of the function is the way to go.
+
+When bringing in things like structs, enums, modules it's better to bring in the thing itself rather than a function
+When you use a HashMap, bring in: use std::collections::HashMap; this is how Rust writers like it.
+
+There is one exception to the rule, if you bring in something with use, that has the same name, that is not allowed
+in Rust and won't compile, so say you have Result two times, you should bring it in like this:
+use std::fmt;
+use std::io;
+
+fn function1() -> fmt::Result {
+    // --snip--
+}
+
+fn function2() -> io::Result<()> {
+    // --snip--
+}
+
+
+Just like in Python and PHP (and many more) you can use the keyword 'as' and give the thing you want to use
+a new name, an alias, in this case you can bring in the same word two times, for example:
+use std::fmt::Result;
+use std::io::Result as IoResult;
+
+fn function1() -> Result {
+    // --snip--
+}
+
+fn function2() -> IoResult<()> {
+    // --snip--
+}
+
+Both of the ways you bring in Rust code are considered good practices, but I would prefer the top one where you
+just bring in the fmt and the io.
+
+
+When you introduce a name into the scope with the use keyword, that name is private, you only use it in that scope.
+When you want to enable other code (not from us) that uses our code, to refer to that name the same way as we do in
+our code, you can re-export it. You make it possible for others to bring in the code that you brought in through you.
+To do this, make your use statement public, like so: pub use crate::front_of_house::hosting;
+This is convenient to use and makes you libraries well organized.
+
+
+You can bring in other peoples external packages with the Cargo.toml file of the project.
+To add f.e. the random module: below dependencies add the following line:
+rand = "0.8.5"
+This tells Cargo to download the rand package and all the dependencies from that crate.
+Then bring in rand into the code with use, like so: use rand::Rng;
+There is one exception to the rule and that is the std library.
+You do not need to specify this as a dependency, or need to download it.
+You do have to bring it in your code, f.e. a hashmap is done this way: use std::collections::HashMap;
+
+
+You normally bring in quite a lot of the std library.
+This automatically comes with a lot of lines.
+To clean this up a bit, you can nest your imports.
+Say you have these two lines of code:
+use std::cmp::Ordering;
+use std::io;
+You can make this into one line of code with:
+use std::{cmp::Ordering, io};
+Alright nice, but say you have these two lines:
+use std::io;
+use std::io::Write;
+You cannot do this the same way, here you have to specify the self:
+use std::io::{self, Write};
+These are the ways to do it.
+
+
+Say you want to bring in all the std::io names, you can do that with the glob operator.
+Notttt the global operator, it's the glob operator. It works like this:
+use std::io::*;
+This is not a good practice most of the time, but sometimes it is used with tests and the prelude pattern.
+I wouldn't use it.
