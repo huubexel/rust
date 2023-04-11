@@ -1,1 +1,40 @@
 You can also make structs and enums public but there are a few details that have to be told first.
+With structs, it is so that if you make the struct public, the struct will be public, but it's
+fields will be private (just like with the modules). So you can only use those fields if you make the public,
+or in another field in the same struct.
+You can write to and use the public fields with the dot notation f.e. --> meal.toast = String::from("Wheat");
+
+Say you have this module with a struct inside of it:
+mod back_of_house {
+    pub struct Breakfast {
+        pub toast: String,
+        seasonal_fruit: String,
+    }
+}
+
+At this point you wouldn't be able to construct an instance of this struct because you cannot set the private
+field seasonal_fruit here. So in this case you would need an extra function to create an instance of Breakfast.
+This would be the solution:
+mod back_of_house {
+    pub struct Breakfast {
+        pub toast: String,
+        seasonal_fruit: String,
+    }
+
+    impl Breakfast {
+        pub fn summer(toast: &str) -> Breakfast {
+            Breakfast {
+                toast: String::from(toast),
+                seasonal_fruit: String::from("peaches"),
+            }
+        }
+    }
+}
+
+
+For enums it is a bit different:
+If you make an enum public, all of its variants are public. You can automatically use all of them.
+Because you would probably want to use all variants of the enum, they are all automatically public if you
+make the enum public.
+
+
