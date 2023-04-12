@@ -95,6 +95,8 @@ because that is the only way you could get there without moving the code.
 But in this situation it is fairly useful to use super!
 To get deliver_order put super::deliver_order(); in fix_incorrect_order --> see actions.rs
 
+About the module itself, a module is not an include like in other programming languages.
+
 
 
 
