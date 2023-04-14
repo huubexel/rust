@@ -23,6 +23,7 @@
       <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/variables/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/vectors/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/learned_topics/multiple_directory_topics/module_system/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/learned_topics/multiple_directory_topics/minigrep/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/guessing_game/target" />
       <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/variables/target" />
       <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/data_types/target" />
@@ -43,6 +44,7 @@
       <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/recoverable_errors/target" />
       <excludeFolder url="file://$MODULE_DIR$/learned_topics/single_directory_topics/generics/target" />
       <excludeFolder url="file://$MODULE_DIR$/learned_topics/multiple_directory_topics/module_system/target" />
+      <excludeFolder url="file://$MODULE_DIR$/learned_topics/multiple_directory_topics/minigrep/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
