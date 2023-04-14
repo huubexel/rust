@@ -1,4 +1,5 @@
 use std::env; // env has args() which can read command line arguments.
+use std::fs; // fs has functions to handle files
 
 fn main() {
     /* Gets the Arguments given in by the user and put them in a Vector */
@@ -11,6 +12,12 @@ fn main() {
 
     println!("Searching for {}", query);
     println!("In file {}", file_path);
+
+    /* Opens a file and returns a Result<String> of the file's contents. */
+    let contents = fs::read_to_string(file_path)
+        .expect("Should have been able to read the file");
+
+    println!("With text:\n{contents}");
 }
 
 
