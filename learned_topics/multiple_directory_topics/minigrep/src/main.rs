@@ -5,10 +5,7 @@ fn main() {
     /* Gets the Arguments given in by the user and put them in a Vector */
     let args: Vec<String> = env::args().collect();
 
-    /* We do not save the &args[0] here because that is the name of our binary and
-    we don't need that for this assignment. */
-    let query = &args[1]; // the thing you want to get
-    let file_path = &args[2]; // the file you will be searching in
+    let (query, file_path) = parse_config(&args);
 
     println!("Searching for {}", query);
     println!("In file {}", file_path);
@@ -18,6 +15,13 @@ fn main() {
         .expect("Should have been able to read the file");
 
     println!("With text:\n{contents}");
+}
+
+fn parse_config(args: &[String]) -> (&str, &str) {
+    let query = &args[1];
+    let file_path = &args[2];
+
+    (query, file_path)
 }
 
 
