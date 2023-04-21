@@ -5,7 +5,7 @@ fn main() {
     /* Gets the Arguments given in by the user and put them in a Vector */
     let args: Vec<String> = env::args().collect();
 
-    let config= parse_config(&args);
+    let config= Config::new(&args);
 
     println!("Searching for {}", config.query);
     println!("In file {}", config.file_path);
@@ -22,13 +22,14 @@ struct Config {
     file_path: String
 }
 
-fn parse_config(args: &[String]) -> Config {
-    let query = args[1].clone();
-    let file_path = args[2].clone();
+impl Config {
+    fn new(args: &[String]) -> Config {
+        let query = args[1].clone();
+        let file_path = args[2].clone();
 
-    Config { query, file_path }
+        Config { query, file_path }
+    }
 }
-
 
 /* In this case we have chosen args(), args() does require you to use normal unicode.
 so anything special like emoji's it cannot read and it will panic if something goes wrong
@@ -39,3 +40,7 @@ so in this case we want a vector of strings. */
 
 
 // dbg!(args); /* prints args using the debug macro */
+
+/* Normally you would not want to use clone because the runtime performance will be worse,
+but for now this will do. In your absolute final code you would want to use something
+different in this situation. */
