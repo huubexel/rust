@@ -22,6 +22,10 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>>{
     /* Opens a file and returns a Result<String> of the file's contents. */
     let contents = fs::read_to_string(config.file_path)?;
 
+    for line in search(&config.query, &contents) {
+        println!("{line}");
+    }
+
     Ok(())
 }
 
